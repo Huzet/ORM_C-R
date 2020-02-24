@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Users</title>
+</head>
+<body>
+    <h2 align="center">All the Users</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First_name</th>
+                <th scope="col">Last_name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Age</th>
+              </tr>
+            {% for x in user1 %}%}
+            <tr>
+                <td>{{x["id"]}}</td>
+                <td>{{x["first_name"]}}</td>
+                <td>{{x["last_name"]}}</td>
+                <td>{{x["email"]}}</td>
+                <td>{{x["age"]}}</td>  
+            </tr>
+            {% endfor %}
+        </thead>
+    </table>
+    <hr>
+    <h2 align="center">Add a User</h2>
+    <form action="/add", method="POST">
+        <div>
+          <label>First Name</label>
+          <input type="text" class="form-control" name="FN" placeholder="First_Name">
+          <label>Last Name</label>
+          <input type="text" class="form-control" name="LN" placeholder="Last_Name">
+          <label>Email</label>
+          <input type="text" class="form-control" name="EM" placeholder="Email">
+          <label>Age</label>
+          <input type="text" class="form-control" name="AG" placeholder="Age">
+          <input type='submit' class="btn btn-outline-primary" value='Add'>
+        </div>       
+    </form>
+    
+</body>
+</html>
